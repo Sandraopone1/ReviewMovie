@@ -41,13 +41,13 @@ export class MovieDisplayComponent implements OnInit {
   }
 
   deleteMovie(){
-    this._MovieService.destroy(this.movieId).then( movie => this._Router.navigateByUrl("/")) 
+    this._MovieService.destroy(this.movieId).then( movie => this._Router.navigateByUrl("/display/:id")) 
     .catch(err => console.log(err));
   }
 
   deleteRev(id){
     console.log(id)
-    this._RevService.destroy(id).then( review => this._Router.navigateByUrl("/")) 
+    this._RevService.destroy(id).then( review => this._Router.navigateByUrl("/display/:id")) 
     .catch(err => console.log(err)
   );
   this.getReviews() 

@@ -2,7 +2,7 @@ let express = require("express");
 let app = express();
 let bodyParser = require("body-parser");
 let session = require("express-session");
-const port = 7000;
+const port = 8000;
 
 app.use(bodyParser.urlencoded({extend:true}));
 app.use(express.static(__dirname + "/client/dist"));

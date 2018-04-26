@@ -28,7 +28,14 @@
     </div>
   </div>
 
-  Stars:<input type="number" min="1" max="5" value="1" name="newMovie.movie_stars" [(ngModel)]="newMovie.movie_stars" class="form-control" required minlength="1" #rStars="ngModel"><br><br>
+  Stars:<select type="number" name="newMovie.movie_stars" [(ngModel)]="newMovie.movie_stars" class="form-control" required minlength="1" #rStars="ngModel"><br><br>
+  
+  <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  
   <div *ngIf="rStars.invalid && (rStars.dirty || rStars.touched)" class="alert alert-danger">
       <div *ngIf="rStars.errors.required">
         <p>the Stars type is missing!</p>
@@ -37,6 +44,29 @@
         <p>Must be at least 1 characters long dude!</p>
       </div>
   </div>
+
+</select>
+  <!-- Stars: <select type="number" name="newRev.stars" [(ngModel)]="newRev.stars" class="form-control" required minlength="1" #rStars="ngModel" ><br>
+    
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <div *ngIf="rStars.invalid && (rStars.dirty || rStars.touched)" class="alert alert-danger">
+      <div *ngIf="rStars.errors.required">
+        <p>the Stars type is missing!</p>
+      </div>
+      <div *ngIf="rStars.errors.minlength">
+        <p>Must be at least 1 characters long dude!</p>
+      </div>
+  </div> 
+  </select> -->
+
+
+
+<br><br>
+
 
   Review:<input type="text" name="newMovie.description" [(ngModel)]="newMovie.description" placeholder="description" class="form-control" required minlength="3" #rReview="ngModel"><br><br>
   <div *ngIf="rReview.invalid && (rReview.dirty || rReview.touched)" class="alert alert-danger">

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
-import {Observable} from "rxjs/observable";
+//import {Observable} from "rxjs/observable";
 //import 'rxjs';
-//import "rxjs/add/operator/map"
+import "rxjs/add/operator/map"
 
 @Injectable()
 export class RevService {
