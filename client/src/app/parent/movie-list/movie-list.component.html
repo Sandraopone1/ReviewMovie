@@ -1,0 +1,22 @@
+<p>
+  movie-list works!
+</p>
+<div>
+<h2>Movie List</h2>
+
+<a [routerLink]="['new']" class="up">Add a new movie</a><br><br>
+</div>
+
+<table border="1">
+  <tr>
+    <th>Movie Title</th>
+    <th>Action</th>
+
+  </tr>
+  <tr *ngFor= "let movie of movies">
+    <td>{{movie.movie_name}}</td>
+    <td> <button [routerLink]="['display', movie._id]" class="btn">Read Reviews</button> | 
+      <button [routerLink]="['review', movie._id]" class="btn">Write a Review</button>
+   
+    </tr>
+</table>

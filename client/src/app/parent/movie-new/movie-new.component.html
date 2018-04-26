@@ -1,0 +1,62 @@
+<p>
+  movie-new works!
+</p>
+
+<h2>Submit a movie and your review</h2>
+<p *ngIf="errors" class="errors">{{errors}}</p>
+    
+    
+<form (submit)="createNew()" *ngIf="newMovie"  name="movForm" #movForm="ngForm">
+      
+  Movie Name:<input type="text" name="newMovie.movie_name" [(ngModel)]="newMovie.movie_name" placeholder="Movie name" class="form-control" required minlength="3" #rMName="ngModel"><br><br>
+  <div *ngIf="rMName.invalid && (rMName.dirty || rMName.touched)" class="alert alert-danger">
+    <div *ngIf="rMName.errors.required">
+      <p>the movie name is missing!</p>
+    </div>
+    <div *ngIf="rMName.errors.minlength">
+      <p>Must be at least 3 characters long</p>
+    </div>
+  </div>
+
+  Name:<input type="text" name="newMovie.name" [(ngModel)]="newMovie.name" placeholder="Name" class="form-control" required minlength="3" #rName="ngModel"><br><br>
+  <div *ngIf="rName.invalid && (rName.dirty || rName.touched)" class="alert alert-danger">
+    <div *ngIf="rName.errors.required">
+      <p>Your name is missing!</p>
+    </div>
+    <div *ngIf="rName.errors.minlength">
+      <p>Must be at least 3 characters long</p>
+    </div>
+  </div>
+
+  Stars:<input type="number" min="1" max="5" value="1" name="newMovie.movie_stars" [(ngModel)]="newMovie.movie_stars" class="form-control" required minlength="1" #rStars="ngModel"><br><br>
+  <div *ngIf="rStars.invalid && (rStars.dirty || rStars.touched)" class="alert alert-danger">
+      <div *ngIf="rStars.errors.required">
+        <p>the Stars type is missing!</p>
+      </div>
+      <div *ngIf="rStars.errors.minlength">
+        <p>Must be at least 1 characters long dude!</p>
+      </div>
+  </div>
+
+  Review:<input type="text" name="newMovie.description" [(ngModel)]="newMovie.description" placeholder="description" class="form-control" required minlength="3" #rReview="ngModel"><br><br>
+  <div *ngIf="rReview.invalid && (rReview.dirty || rReview.touched)" class="alert alert-danger">
+      <div *ngIf="rReview.errors.required">
+        <p>the description is missing !</p>
+      </div>
+      <div *ngIf="rReview.errors.minlength">
+        <p>Must be at least 3 characters long!</p>
+      </div>
+  </div>
+ <!-- <div class="space">  -->
+  <div *ngIf= "movForm.invalid">
+    <input type="submit" value="Submit" disabled  class="btn">
+  </div>
+
+  <div *ngIf= "movForm.valid">
+    <input type="submit" value="submit"class="btn" >
+  </div>
+      
+</form>
+<button [routerLink]="['/']" class="brown">Cancel</button>
+ <!-- </div>    -->
+    

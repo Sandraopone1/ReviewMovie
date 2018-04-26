@@ -1,0 +1,34 @@
+.btn{
+    background:    #6fa8dc;
+    
+    background:    -webkit-linear-gradient(#6fa8dc, #444444);
+    background:    linear-gradient(#6fa8dc, #444444);
+    border-radius: 5px;
+    width:         125px;
+    height:        32px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 16px/32px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   none;
+    margin: 5px; 
+}
+.brown {
+    background:    #f9cb9c;
+    background:    -webkit-linear-gradient(#f9cb9c, #444444);
+    background:    linear-gradient(#f9cb9c, #444444);
+    border-radius: 5px;
+    width:         125px;
+    height:        32px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 16px/32px "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   none;
+    border-style: none;
+    margin: 5px;
+}
+/* 
+.space{
+    display: flex;
+} */

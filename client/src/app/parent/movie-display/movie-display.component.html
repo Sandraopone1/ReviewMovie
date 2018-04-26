@@ -1,0 +1,30 @@
+<p>
+  movie-display works!
+</p>
+<div *ngIf="movies.data">
+
+
+  <h2 *ngIf="movies.data.movie_name">Reviews for {{movies.data.movie_name}}</h2>
+
+</div>
+
+<button (click)="deleteMovie()" class="btn">Delete</button><br><br>
+
+<div>
+      <Table border="1">
+          <tr>
+              <th>Name</th>
+              <th>Stars</th>
+              <th>Description</th>
+              <th>Delete Review</th>
+          </tr>
+        
+          <tr *ngFor="let review of reviews">
+              <td>{{review.name}}</td>
+              <td>{{review.stars}}</td>
+              <td>{{review.description}}</td>
+              <td><button (click)="deleteRev(review._id)" class="btn">Delete</button></td>
+      </Table>
+  </div><br>
+
+<button [routerLink]="['/']">Home Page</button><br><br>

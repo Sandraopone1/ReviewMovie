@@ -1,0 +1,67 @@
+<p>
+  movie-review works!
+</p>
+
+
+<div *ngIf="movies">
+  <h2>Write a review for {{movies.data.movie_name}}</h2>
+  </div>
+  
+  <p *ngIf="errors" class="errors">{{errors}}</p>
+  
+  
+  <form (submit)="createNew()" *ngIf="newRev"  name="revForm" #revForm="ngForm">
+    
+      Name:<input type="text" name="newRev.name" [(ngModel)]="newRev.name" placeholder="Name" class="form-control" required minlength="3" #rName="ngModel"><br><br>
+      <div *ngIf="rName.invalid && (rName.dirty || rName.touched)" class="alert alert-danger">
+        <div *ngIf="rName.errors.required">
+          <p>the name is missing!</p>
+        </div>
+        <div *ngIf="rName.errors.minlength">
+          <p>Must be at least 3 characters long</p>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+      Review:<input type="text" name="newRev.description" [(ngModel)]="newRev.description" placeholder="description" class="form-control" required minlength="3" #rReview="ngModel"><br><br>
+      <div *ngIf="rReview.invalid && (rReview.dirty || rReview.touched)" class="alert alert-danger">
+          <div *ngIf="rReview.errors.required">
+            <p>the review is missing!</p>
+          </div>
+          <div *ngIf="rReview.errors.minlength">
+            <p>Must be at least 3 characters long dude!</p>
+          </div>
+      </div>
+  
+  
+      Stars:
+      
+
+      <select type="number" name="newRev.stars" [(ngModel)]="newRev.stars" class="form-control" required minlength="1" #rStars="ngModel" >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      
+    
+      
+      <div *ngIf="revForm.invalid">
+        <input type="submit" value="Submit" disabled>
+      </div>
+    
+      <div *ngIf="revForm.valid">
+          <input type="submit" value="submit" class="btn">
+      </div>
+    
+    
+    </form>
+    
+    <button [routerLink]="['/']" class="btn">Cancel</button>
+  
+  
